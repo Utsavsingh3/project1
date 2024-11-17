@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="shifting.css">
+    <style>
+        body{
+    background-color:pink;
+}
+
+.main{
+    background-color: white;
+    height: 110px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    border-radius: 55px;
+    transition-property: all;
+    background-image: url(b965d636-845a-40a1-a210-5bfb87b04b10.gif);
+
+    background-size: cover;
+    padding: 0px;
+    position: relative;
+}
+
+.child{
+    height: 103px;
+    width: 103px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(227, 212, 194, 0.663);
+    border-radius: 50%;
+    position: relative;
+    left: 5px;
+}
+
+.grandchild{
+    height: 95px;
+    width: 95px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right bottom,white,pink);   
+}
+
+.main::after{
+    content: '';
+    height: 118px;
+    width: 309px;
+    border-radius: 57px;
+    background-image: repeating-conic-gradient(from var(--a),blue ,aqua 30deg ,royalblue 60deg );
+    position: absolute;
+    z-index: -1;
+    left: -4.52px;
+    animation-name: ani;
+    animation-timing-function: linear;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+   
+}
+
+@property --a
+{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+/* this is all for rotation */
+.main:active{
+    background-color: red;
+    background-image: url(55ecf8a9-3fc7-49bf-a256-4f0519994f82.gif);
+    background-size: cover;
+    transition-duration: 1.5sec;
+}
+.child:active{
+    
+    transform: translateX(188px);
+    transition-duration: 1.5s;
+}
+@keyframes ani{
+    0%{
+     --a:0deg;
+
+    }
+    100%{
+        --a:360deg;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="child">
+            <div class="grandchild"></div>
+        </div>
+
+    </div>
+</body>
+</html>
