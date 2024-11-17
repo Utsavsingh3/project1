@@ -11,7 +11,7 @@ body{
     /* justify-content: center; */
     border-radius: 55px;
     transition-property: all;
-    background-image: url(./images/GIF2.gif);
+    background-image: url(./images/GIF1.gif);
 
     background-size: cover;
     padding: 0px;
@@ -63,7 +63,7 @@ body{
 /* this is all for rotation */
 .main:active{
     background-color: red;
-    background-image: url(./images/GIF1.gif);
+    background-image: url(./images/GIF2.gif);
     background-size: cover;
     transition-duration: 1.5sec;
 }
